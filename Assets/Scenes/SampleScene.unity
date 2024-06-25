@@ -753,6 +753,8 @@ MonoBehaviour:
   myRigidBody: {fileID: 1552344517}
   flapStrength: 20
   logic: {fileID: 0}
+  birdIsAlive: 1
+  isBird: 0
 --- !u!58 &1552344519
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1010,7 +1012,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 51
+    m_FontSize: 199
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1021,7 +1023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 0
 --- !u!222 &1683791186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1039,16 +1041,16 @@ RectTransform:
   m_GameObject: {fileID: 1683791184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.38868576, y: 0.38868576, z: 0.38868576}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1674464483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -449.3, y: 292.7}
-  m_SizeDelta: {x: 108.2366, y: 81.3672}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -506.71, y: 305.2}
+  m_SizeDelta: {x: 296.7, y: 227.7}
+  m_Pivot: {x: 0.14069445, y: 0.6590599}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
