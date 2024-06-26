@@ -11,11 +11,17 @@ public class logicScript2 : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
 
+    public bool disableScore = false;
+
+    // what's this again?
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
-        playerScore += scoreToAdd;
-        scoreText.text = playerScore.ToString();
+        if (!disableScore)
+        {
+            playerScore += scoreToAdd;
+            scoreText.text = playerScore.ToString();
+        }
     }
 
     // this will RESTART THE SCENE:
@@ -27,6 +33,7 @@ public class logicScript2 : MonoBehaviour
 
     public void gameOver()
     {
+        disableScore = true;
         gameOverScreen.SetActive(true);     // disabled. This enables it.
     }
 }

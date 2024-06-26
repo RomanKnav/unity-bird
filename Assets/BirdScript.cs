@@ -14,24 +14,22 @@ public class BirdScript : MonoBehaviour
     public bool isBird = false;
 
     private Camera mainCamera;
-    private float cameraHeight;
+    private float cameraBottom;
+    private float cameraTop;
 
     // Start is called before the first frame update
     void Start()
     {
+        // SHIT IN HERE RUNS AS SOON AS THE GAME STARTS. Runs only once. gameObject is basically "this":
+
         mainCamera = Camera.main;
 
-        // SHIT IN HERE RUNS AS SOON AS THE GAME STARTS. Runs only once. gameObject is basically "this":
-        gameObject.name = "Pablo";
+        cameraTop = mainCamera.transform.position.y + mainCamera.orthographicSize;
+        cameraBottom = mainCamera.transform.position.y - mainCamera.orthographicSize;
+
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript2>();
         // what's the point of having this when logic is already defined above?
 
-        cameraHeight = 2f * mainCamera.orthographicSize;
-        float width = cameraHeight * mainCamera.aspect;
-
-        // Print the camera's height and width
-        Debug.Log("Orthographic Camera Height: " + cameraHeight);
-        Debug.Log("Orthographic Camera Width: " + width);
     }
 
     // Update is called ONCE PER FRAME.
@@ -45,9 +43,10 @@ public class BirdScript : MonoBehaviour
 
         float gameObjectY = transform.position.y;
 
-        if (gameObjectY < cameraHeight)
+        if (gameObjectY < cameraBottom || gameObjectY > cameraTop)
         {
             logic.gameOver();
+            birdIsAlive = false;
         }
     }
 
